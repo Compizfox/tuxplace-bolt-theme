@@ -1,0 +1,12 @@
+{% extends 'abstract/master.twig' %}
+
+{% block main %}
+    <article>
+        <header>
+            <h1 class="display-4">{{ record.title }}</h1>
+        </header>
+
+		{{ record.teaser }}
+		{{ record.body }}
+    </article>
+{% endblock main %}

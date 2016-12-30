@@ -1,0 +1,13 @@
+{% extends 'abstract/master.twig' %}
+
+{% setcontent record = 'blocks/404-not-found' %}
+
+{% block title %}
+	{{ record.title|default('404 not found') }}
+{% endblock title %}
+
+{% block main %}
+	<h1>{{ record.title}}</h1>
+
+	{{ fields(record) }}
+{% endblock main %}

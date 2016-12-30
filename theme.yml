@@ -1,0 +1,10 @@
+facebook: compizfox
+twitter: larsveldscholte
+flickr: compizfox
+github: compizfox
+#email: myemail@my.domain
+
+homepage_template: index.twig
+record_template: record.twig
+listing_template: listing.twig
+notfound: notfound.twig

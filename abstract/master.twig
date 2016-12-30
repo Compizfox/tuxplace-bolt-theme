@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ htmllang() }}">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>
+		{%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
+		{{ app.config.get('general/sitename') -}}
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+	<link rel="stylesheet" href="{{ asset('theme.css', 'theme') }}">
+</head>
+<body>
+	<header>
+		<div class="banner">
+			<div class="inner">
+				<h1 class="display-1"><a href="{{ paths.root }}">{{ app.config.get('general/sitename') }}</a></h1>
+				{% if app.config.get('general/payoff') %}
+					<h4>{{ app.config.get('general/payoff') }}</h4>
+				{% endif %}
+			</div>
+		</div>
+	</header>
+	<nav class="navbar navbar-full">
+		{{ menu() }}
+
+		<ul class="nav navbar-nav float-xs-right icons">
+			{% if theme.twitter %}  <li class="nav-item"><a href="https://twitter.com/{{ theme.twitter }}" class="nav-link"><span class="fa fa-twitter"></span></a></li>{% endif %}
+			{% if theme.facebook %} <li class="nav-item"><a href="https://facebook.com/{{ theme.facebook }}" class="nav-link"><span class="fa fa-facebook"></span></a></li>{% endif %}
+			{% if theme.flickr %}   <li class="nav-item"><a href="https://flickr.com/photos/{{ theme.flickr }}" class="nav-link"><span class="fa fa-flickr"></span></a></li>{% endif %}
+			{% if theme.github %}   <li class="nav-item"><a href="https://github.com/{{ theme.github }}" class="nav-link"><span class="fa fa-github"></span></a></li>{% endif %}
+			{% if theme.email %}    <li class="nav-item"><a href="mailto:{{ theme.email }}" class="nav-link"><span class="fa fa-envelope"></span></a></li>{% endif %}
+		</ul>
+	</nav>
+	<main class="container">
+		{% block main %}
+		{% endblock %}
+	</main>
+	<footer>
+		<p class="text-muted" style="text-align: center">Lars Veldscholte</p>
+	</footer>
+</body>
+</html>

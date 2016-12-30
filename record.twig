@@ -1,0 +1,22 @@
+{% extends 'abstract/master.twig' %}
+
+{% block main %}
+	<article>
+		<header>
+			{% if record.image is not empty %}
+				<img class="articleImage" src="{{ image(record.image) }}">
+			{% endif %}
+
+			<p class="text-muted">
+				{{ record.datecreated|date('Y-m-d')}}
+				{%- if record.datecreated|date('Y-m-d') != record.datechanged|date('Y-m-d') -%}
+					, bewerkt op {{ record.datechanged|date('Y-m-d') }}
+				{%- endif -%}
+			</p>
+			<h1 class="display-4">{{ record.title }}</h1>
+		</header>
+
+		{{ record.teaser }}
+		{{ record.body }}
+	</article>
+{% endblock main %}

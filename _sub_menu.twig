@@ -1,0 +1,21 @@
+{% spaceless %}
+	<ul class="nav navbar-nav">
+		{% for item in menu %}
+			<li class="nav-item
+					{{ item.submenu|default(false) ? ' dropdown' }}
+					{{ item|current ? ' active' }}">
+
+				{% if item.submenu is defined %}
+					<a href="{{ item.link }}" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ item.label }}</a>
+					<div class="dropdown-menu">
+						{% for item in item.submenu %}
+							<a href="{{ item.link }}" class="dropdown-item">{{ item.label }}</a>
+						{% endfor %}
+					</div>
+				{% else %}
+					<a href="{{ item.link }}" class="nav-link">{{ item.label }}</a>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endspaceless %}
