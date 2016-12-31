@@ -8,8 +8,8 @@
 			{% endif %}
 
 			<p class="text-muted">
-				{{ record.datecreated|date('Y-m-d')}}
-				{%- if record.datecreated|date('Y-m-d') != record.datechanged|date('Y-m-d') -%}
+				{{ record.datepublish|date('Y-m-d')}}
+				{%- if record.datepublish|date('Y-m-d') != record.datechanged|date('Y-m-d') -%}
 					, bewerkt op {{ record.datechanged|date('Y-m-d') }}
 				{%- endif -%}
 			</p>
