@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
 	<link rel="stylesheet" href="{{ asset('theme.css', 'theme') }}">
+	<link rel="icon" href="{{ asset('images/favicon.ico', 'theme')}}" type="image/x-icon">
 </head>
 <body>
 	<header>
@@ -26,17 +27,21 @@
 		</div>
 	</header>
 	<nav class="navbar navbar-full">
-		{{ menu() }}
-
-		<ul class="nav navbar-nav float-xs-right icons">
-			{% if theme.twitter %}  <li class="nav-item"><a href="https://twitter.com/{{ theme.twitter }}" class="nav-link"><span class="fa fa-twitter"></span></a></li>{% endif %}
-			{% if theme.facebook %} <li class="nav-item"><a href="https://facebook.com/{{ theme.facebook }}" class="nav-link"><span class="fa fa-facebook"></span></a></li>{% endif %}
-			{% if theme.flickr %}   <li class="nav-item"><a href="https://flickr.com/photos/{{ theme.flickr }}" class="nav-link"><span class="fa fa-flickr"></span></a></li>{% endif %}
-			{% if theme.github %}   <li class="nav-item"><a href="https://github.com/{{ theme.github }}" class="nav-link"><span class="fa fa-github"></span></a></li>{% endif %}
-			{% if theme.youtube %}  <li class="nav-item"><a href="https://www.youtube.com/user/{{ theme.youtube }}" class="nav-link"><span class="fa fa-youtube-play"></span></a></li>{% endif %}
-			{% if theme.steam %}    <li class="nav-item"><a href="http://steamcommunity.com/id/{{ theme.steam }}" class="nav-link"><span class="fa fa-steam"></span></a></li>{% endif %}
-			{% if theme.email %}    <li class="nav-item"><a href="mailto:{{ theme.email }}" class="nav-link"><span class="fa fa-envelope"></span></a></li>{% endif %}
-		</ul>
+		<button class="navbar-toggler hidden-lg-up fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button>
+		<div class="collapse navbar-toggleable-md" id="navbarResponsive">
+			{{ menu() }}
+			<ul class="nav navbar-nav float-md-right icons">
+				<li class="nav-item">
+					{% if theme.twitter %}  <a href="https://twitter.com/{{ theme.twitter }}"><span class="fa fa-twitter"></span></a>{% endif %}
+					{% if theme.facebook %} <a href="https://facebook.com/{{ theme.facebook }}"><span class="fa fa-facebook"></span></a>{% endif %}
+					{% if theme.flickr %}   <a href="https://flickr.com/photos/{{ theme.flickr }}"><span class="fa fa-flickr"></span></a>{% endif %}
+					{% if theme.github %}   <a href="https://github.com/{{ theme.github }}"><span class="fa fa-github"></span></a>{% endif %}
+					{% if theme.youtube %}  <a href="https://www.youtube.com/user/{{ theme.youtube }}"><span class="fa fa-youtube-play"></span></a>{% endif %}
+					{% if theme.steam %}    <a href="http://steamcommunity.com/id/{{ theme.steam }}"><span class="fa fa-steam"></span></a>{% endif %}
+					{% if theme.email %}    <a href="mailto:{{ theme.email }}" class="nav-link"><span></span></a>{% endif %}
+				</li>
+			</ul>
+		</div>
 	</nav>
 	<main class="container">
 		{% block main %}
@@ -45,5 +50,8 @@
 	<footer>
 		<p class="text-muted" style="text-align: center">Lars Veldscholte</p>
 	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 </body>
 </html>
