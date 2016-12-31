@@ -2,6 +2,8 @@ facebook: compizfox
 twitter: larsveldscholte
 flickr: compizfox
 github: compizfox
+youtube: compizlars
+steam: compizfox
 #email: myemail@my.domain
 
 homepage_template: index.twig
