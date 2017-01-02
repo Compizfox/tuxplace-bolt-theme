@@ -68,11 +68,15 @@ main {
 
 /* Code blocks */
 pre {
-	background-color: #444;
+	background-color: #222222;
 	border-radius: 0.5rem;
 	color: #fff;
 	padding: 1rem;
 	overflow-x: auto;
+}
+
+pre code.hljs {
+	padding: 0;
 }
 
 /* Latest entries */
