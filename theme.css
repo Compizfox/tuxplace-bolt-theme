@@ -2,7 +2,6 @@
 
 body {
 	background: #fff;
-	font-family: 'Source Sans Pro', sans-serif;
 	text-rendering: optimizeLegibility;
 }
 
@@ -72,7 +71,6 @@ pre {
 	background-color: #444;
 	border-radius: 0.5rem;
 	color: #fff;
-	font-family: "Source Code Pro", monospace;
 	padding: 1rem;
 	overflow-x: auto;
 }
