@@ -6,13 +6,21 @@ body {
 }
 
 main {
-	margin: 3rem 0;
+	margin: 3rem auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media(min-width: 576px) {
+	main {
+		width: 65%;
+	}
 }
 
 /* Header */
 .banner {
-	background-size: cover;
 	background: url("images/banner.jpg") no-repeat;
+	background-size: cover;
 	width: 100%;
 	padding: 75px 0;
 }
