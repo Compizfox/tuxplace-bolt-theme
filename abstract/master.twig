@@ -15,36 +15,39 @@
 	<link rel="icon" href="{{ asset('images/favicon.ico', 'theme')}}" type="image/x-icon">
 </head>
 <body>
-	<header>
-		<div class="banner">
-			<div class="inner">
-				<h1 class="display-1"><a href="{{ paths.root }}">{{ app.config.get('general/sitename') }}</a></h1>
-				{% if app.config.get('general/payoff') %}
-					<h4>{{ app.config.get('general/payoff') }}</h4>
-				{% endif %}
+	<div class="wrapper">
+		<header>
+			<div class="banner">
+				<div class="inner">
+					<h1 class="display-1"><a href="{{ paths.root }}">{{ app.config.get('general/sitename') }}</a></h1>
+					{% if app.config.get('general/payoff') %}
+						<h4>{{ app.config.get('general/payoff') }}</h4>
+					{% endif %}
+				</div>
 			</div>
-		</div>
-	</header>
-	<nav class="navbar navbar-full">
-		<button class="navbar-toggler hidden-lg-up fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button>
-		<div class="collapse navbar-toggleable-md" id="navbarResponsive">
-			{{ menu() }}
-			<ul class="nav navbar-nav float-md-right icons">
-				<li class="nav-item">
-					{% if theme.twitter %}  <a href="https://twitter.com/{{ theme.twitter }}">          <span class="fa fa-twitter">     </span></a>{% endif %}
-					{% if theme.facebook %} <a href="https://facebook.com/{{ theme.facebook }}">        <span class="fa fa-facebook">    </span></a>{% endif %}
-					{% if theme.flickr %}   <a href="https://flickr.com/photos/{{ theme.flickr }}">     <span class="fa fa-flickr">      </span></a>{% endif %}
-					{% if theme.github %}   <a href="https://github.com/{{ theme.github }}">            <span class="fa fa-github">      </span></a>{% endif %}
-					{% if theme.youtube %}  <a href="https://www.youtube.com/user/{{ theme.youtube }}"> <span class="fa fa-youtube-play"></span></a>{% endif %}
-					{% if theme.steam %}    <a href="http://steamcommunity.com/id/{{ theme.steam }}">   <span class="fa fa-steam">       </span></a>{% endif %}
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<main>
-		{% block main %}
-		{% endblock %}
-	</main>
+		</header>
+		<nav class="navbar navbar-full">
+			<button class="navbar-toggler hidden-lg-up fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button>
+			<div class="collapse navbar-toggleable-md" id="navbarResponsive">
+				{{ menu() }}
+				<ul class="nav navbar-nav float-md-right icons">
+					<li class="nav-item">
+						{% if theme.twitter %}  <a href="https://twitter.com/{{ theme.twitter }}">          <span class="fa fa-twitter">     </span></a>{% endif %}
+						{% if theme.facebook %} <a href="https://facebook.com/{{ theme.facebook }}">        <span class="fa fa-facebook">    </span></a>{% endif %}
+						{% if theme.flickr %}   <a href="https://flickr.com/photos/{{ theme.flickr }}">     <span class="fa fa-flickr">      </span></a>{% endif %}
+						{% if theme.github %}   <a href="https://github.com/{{ theme.github }}">            <span class="fa fa-github">      </span></a>{% endif %}
+						{% if theme.youtube %}  <a href="https://www.youtube.com/user/{{ theme.youtube }}"> <span class="fa fa-youtube-play"></span></a>{% endif %}
+						{% if theme.steam %}    <a href="http://steamcommunity.com/id/{{ theme.steam }}">   <span class="fa fa-steam">       </span></a>{% endif %}
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			{% block main %}
+			{% endblock %}
+		</main>
+	</div>
+	
 	<footer>
 		<p class="text-muted" style="text-align: center">Lars Veldscholte</p>
 	</footer>
